@@ -15,8 +15,8 @@ server.get("/", (req, res) => {
 
 server.post("/", (req, res) => {
   body = req.body;
-  if (body) {
-    res.status(200).json({ message: "message received! you sent...", contained: req.body });
+  if (body && Object.keys(body).length > 0) {
+    res.status(200).json({ message: "message received! you sent...", contained: body });
   } else {
     res.status(400).json({ message: "i ain't got no body!" });
   }
