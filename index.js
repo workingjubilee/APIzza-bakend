@@ -13,6 +13,15 @@ server.get("/", (req, res) => {
   res.status(200).json({ message: "it's working" });
 });
 
+server.post("/", (req, res) => {
+  body = req.body;
+  if (body) {
+    res.status(200).json({ message: "message received! you sent...", contained: req.body });
+  } else {
+    res.status(400).json({ message: "i ain't got no body!" });
+  }
+});
+
 server.listen(port, () => {
   console.log(`running on ${port}`);
 });
