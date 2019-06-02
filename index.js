@@ -1,7 +1,7 @@
-const server = require("express")();
+const express = require("express")
 const morgan = require("morgan");
 const cors = require("cors");
-const express = require("express");
+const server = express();
 
 server.use(morgan("combined"));
 server.use(cors());
